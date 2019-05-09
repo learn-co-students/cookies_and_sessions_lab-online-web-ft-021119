@@ -8,9 +8,9 @@
 <% end %>
 
 <h2>Items in Cart</h2>
-<% if @cart && @cart.size > 0 %>
+<% if cart && cart.size > 0 %>
 <ul>
-  <% @cart.map do |product| %>
+  <% cart.each do |product| %>
     <li><%= product %></li>
   <% end %>
 </ul>

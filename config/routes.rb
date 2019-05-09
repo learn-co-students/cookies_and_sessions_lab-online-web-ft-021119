@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   get '/', to: 'products#index'
   post '/', to: 'products#add_to_cart'
 
-  resources :application, only: [:cart]
+  #resources :application, only: [:cart]
   resources :products, only: [:index, :show]
 end

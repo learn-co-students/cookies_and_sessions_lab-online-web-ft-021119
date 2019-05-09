@@ -5,10 +5,9 @@ class ProductsController < ApplicationController
   end
 
   def add_to_cart
-    @cart = session[:cart] ||= []
-    #byebug
+    #binding.pry
     if params[:product]
-      @cart << params[:product]
+      cart << params[:product]
     end
     render :index
   end
