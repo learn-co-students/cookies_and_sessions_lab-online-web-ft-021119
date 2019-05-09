@@ -1,0 +1,18 @@
+<h1>Your Cart</h1>
+<ul>
+<% if session[:cart].nil? %>
+  <p>Your cart is empty.</p>
+<% else %>
+  <% session[:cart].each do |item| %>
+    <li>
+      <%= session[:cart] %>
+    </li>
+  <% end %>
+<% end %>
+</ul>
+
+<h1>Add an item to your shopping cart:</h1>
+
+<%= form_tag('add', method: :put) %>
+Product name: <%= text_field_tag :product %>
+<%= submit_tag 'add to cart' %>
