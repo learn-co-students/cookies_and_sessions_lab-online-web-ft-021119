@@ -1,0 +1,19 @@
+require 'pry'
+<h1>Products Index</h1>
+
+<% if session[:cart].nil? %>
+    <p>Your cart is empty!</p>
+<%else %>
+<ol>
+    <% session[:cart].each do |item| %>
+        <li><%= item %></li>
+    <% end %>
+</ol>
+<% end %>
+
+
+<%= form_tag('/add', method: :patch) %>
+    <%=label_tag :product %>
+    <%=text_field_tag :product %><br>
+
+    <%=submit_tag 'add to cart' %>
